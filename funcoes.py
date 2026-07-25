@@ -104,3 +104,43 @@ def questao_para_texto(dic,id):
     final = f"----------------------------------------\nQUESTAO {id}\n\n{pergunta}\n\nRESPOSTAS:\nA: {opcaoA}\nB: {opcaoB}\nC: {opcaoC}\nD: {opcaoD}\n"
 
     return final
+
+import random
+def gera_ajuda(dic):
+    incorretas = []
+    novo = []
+
+    certo = dic["correta"]
+
+    for opcao in dic["opcoes"]:
+        if opcao != certo:
+            incorretas.append(opcao)
+    
+    dicas = random.randint(1,2)
+    
+    if dicas == 1:
+        dica = random.choice(incorretas)
+        
+        opcaoA = dic["opcoes"][dica]
+        final =f"DICA:\nOpções certamente erradas: {opcaoA}"
+
+    
+    elif dicas == 2:
+        dica1 = random.choice(incorretas)
+        
+        for opcao in dic["opcoes"]:
+            if opcao != dica1 and opcao!= certo:
+                novo.append(opcao)
+        
+        dica2 = random.choice(novo)
+
+        dica1 = dic["opcoes"][dica1]
+        dica2 = dic["opcoes"][dica2]
+        
+        final = f'DICA:\nOpções certamente erradas: {dica1} | {dica2}'
+
+
+    return final
+
+
+
