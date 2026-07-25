@@ -78,3 +78,15 @@ def sorteia_questao(dic,string):
     for nivel,questoes in dic.items():
         if nivel == string:
             return random.choice(questoes)
+
+
+def sorteia_questao_inedita(dic, nivel, questoes_sorteadas):
+    questao = sorteia_questao(dic, nivel)
+
+    for questao_sorteada in questoes_sorteadas:
+        if questao == questao_sorteada:
+            return sorteia_questao_inedita(dic, nivel, questoes_sorteadas)
+
+    questoes_sorteadas.append(questao)
+
+    return questao
