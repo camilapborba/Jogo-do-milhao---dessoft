@@ -70,3 +70,11 @@ def valida_questoes(lista):
         erros = valida_questao(ex)
         resultado.append(erros)
     return resultado
+
+import random
+def sorteia_questao(dic,string):
+    
+
+    for nivel,questoes in dic.items():
+        if nivel == string:
+            return random.choice(questoes)
