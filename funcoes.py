@@ -90,3 +90,17 @@ def sorteia_questao_inedita(dic, nivel, questoes_sorteadas):
     questoes_sorteadas.append(questao)
 
     return questao
+
+def questao_para_texto(dic,id):
+
+
+    pergunta = dic["titulo"]
+    
+    opcaoA = dic["opcoes"]["A"]
+    opcaoB = dic["opcoes"]["B"]
+    opcaoC = dic["opcoes"]["C"]
+    opcaoD = dic["opcoes"]["D"]
+
+    final = f"----------------------------------------\nQUESTAO {id}\n\n{pergunta}\n\nRESPOSTAS:\nA: {opcaoA}\nB: {opcaoB}\nC: {opcaoC}\nD: {opcaoD}\n"
+
+    return final
