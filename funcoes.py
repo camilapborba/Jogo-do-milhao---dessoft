@@ -8,9 +8,7 @@ funções de interface (print/input) e o jogo principal.
 import random
 from perg import quest  # sua base de perguntas, em perg.py
  
-# =========================================================
-# CORES ANSI (deixa o terminal mais legível)
-# =========================================================
+
 VERDE = "\033[92m"
 VERMELHO = "\033[91m"
 AMARELO = "\033[93m"
@@ -19,10 +17,6 @@ NEGRITO = "\033[1m"
 RESET = "\033[0m"
  
  
-# =========================================================
-# AS 7 FUNÇÕES OBRIGATÓRIAS
-# =========================================================
-
 
 def transforma_base(questoes):
     base = {}
@@ -169,9 +163,6 @@ def gera_ajuda(dic):
     return final
 
 
-# =========================================================
-# FUNÇÕES DE INTERFACE (print / input)
-# =========================================================
 def cor_do_premio(premio):
     """Retorna uma cor diferente conforme a faixa de prêmio."""
     if premio >= 300000:
@@ -247,10 +238,7 @@ def pede_sim_ou_nao(pergunta):
             return False
         print(f"{VERMELHO}Digite 's' para sim ou 'n' para não.{RESET}")
  
- 
-# =========================================================
-# JOGO PRINCIPAL
-# =========================================================
+
 PREMIOS = [1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000]
 PULOS_INICIAIS = 3
 AJUDAS_INICIAIS = 2
@@ -311,7 +299,7 @@ def joga_uma_partida(base):
                     print(f"{NEGRITO}Pergunta trocada!{RESET}")
                     break  # sorteia uma nova pergunta inédita do mesmo nível
  
-                # jogador respondeu A, B, C ou D
+                
                 if opcao == questao["correta"]:
                     premio_atual = premio
                     print(f"\n{VERDE}{NEGRITO}Resposta correta! Prêmio atual: R$ {premio_atual}{RESET}")
